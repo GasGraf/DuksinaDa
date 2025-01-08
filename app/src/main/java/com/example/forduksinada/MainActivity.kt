@@ -27,6 +27,7 @@ import coil.ImageLoader
 import coil.compose.rememberAsyncImagePainter
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
+import com.example.forduksinada.view.navigation.Navigation
 import com.example.forduksinada.view.navigation.WeatherScreen
 
 class MainActivity : ComponentActivity() {
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
             if (SDK_INT >= Build.VERSION_CODES.R) {
                 window.insetsController?.hide(WindowInsets.Type.statusBars())
             }
-            WeatherScreen()
+            Navigation()
         }
     }
 }
@@ -68,7 +69,7 @@ fun gifAnimatedAndVisibiliti() {
             ) {
                 Image(
                     painter = rememberAsyncImagePainter(
-                        model = R.drawable.tom,
+                        model = R.drawable.heart_594638,
                         imageLoader = imageLoader
                     ),
                     contentDescription = null,

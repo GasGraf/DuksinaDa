@@ -22,7 +22,7 @@ fun Navigation() {
          * центральный экран
          */
         composable("main_screen") {
-            MainScreen(navController = navController)
+            WeatherScreen()
         }
     }
 }
