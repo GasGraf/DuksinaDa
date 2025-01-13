@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
 
 @Preview
 @Composable
-fun gifAnimatedAndVisibiliti() {
+fun welcome_screen() {
     val imageLoader = ImageLoader.Builder(LocalContext.current)
         .components {
             if (SDK_INT >= 28) {

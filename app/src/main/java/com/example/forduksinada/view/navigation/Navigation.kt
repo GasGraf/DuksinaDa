@@ -13,10 +13,16 @@ fun Navigation() {
         startDestination = "splash_screen"
     ) {
         /**
-         *  экран приветствия
+         *  экран заставка
          */
         composable("splash_screen") {
             SplashScreen(navController = navController)
+        }
+        /**
+         *  экран приветствия
+         */
+        composable("welcome_screen") {
+            WelcomeScreen(navController = navController)
         }
         /**
          * центральный экран

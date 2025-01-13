@@ -16,6 +16,9 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import kotlinx.coroutines.delay
 
+/**
+ * экран загрузки приложения
+ */
 @Composable
 fun SplashScreen(navController: NavController) {
     val scale = remember {
@@ -31,7 +34,7 @@ fun SplashScreen(navController: NavController) {
                 })
         )
         delay(3000L)
-        navController.navigate("main_screen")
+        navController.navigate("welcome_screen")
     }
 
     Box(
