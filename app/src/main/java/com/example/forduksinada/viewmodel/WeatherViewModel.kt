@@ -2,6 +2,9 @@ package com.example.forduksinada.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.forduksinada.ApplicationConstants.Companion.mytishchi_sity
+import com.example.forduksinada.ApplicationConstants.Companion.taganrog_sity
+import com.example.forduksinada.ApplicationConstants.Companion.api_key_for_weather
 import com.example.forduksinada.utils.RetrofitInstance
 import com.example.forduksinada.utils.WeatherState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,17 +19,17 @@ class WeatherViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val moscowWeather = RetrofitInstance.weatherApi.getWeather(
-                    "Мытищи",
-                    "159fd912fae769187444b23c5eb41e41"
-                ).copy(name = "Мытищи")
+                    mytishchi_sity,
+                    api_key_for_weather
+                ).copy(name = mytishchi_sity)
                 val taganrogWeather = RetrofitInstance.weatherApi.getWeather(
-                    "Таганрог",
-                    "159fd912fae769187444b23c5eb41e41"
-                ).copy(name = "Таганрог")
+                    taganrog_sity,
+                    api_key_for_weather
+                ).copy(name = taganrog_sity)
 
                 _weatherState.value = WeatherState.Success(listOf(moscowWeather, taganrogWeather))
             } catch (e: Exception) {
-                _weatherState.value = WeatherState.Error("Error 404 pizda")
+                _weatherState.value = WeatherState.Error("Error not internet connection")
             }
         }
     }
