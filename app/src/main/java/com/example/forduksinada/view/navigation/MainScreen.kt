@@ -29,7 +29,7 @@ import com.example.forduksinada.viewmodel.WeatherViewModel
 fun MainScreen(weatherViewModel: WeatherViewModel = viewModel()) {
 
     val weatherState = weatherViewModel.weatherState.collectAsState().value
-    val painter = painterResource(id = R.drawable.background_cat_night)
+    val painter = painterResource(id = R.drawable.background_day_cat)
 
     LaunchedEffect(Unit) {
         weatherViewModel.getWeather()
