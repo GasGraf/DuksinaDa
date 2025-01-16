@@ -10,6 +10,7 @@ import com.example.forduksinada.utils.WeatherState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 class WeatherViewModel : ViewModel() {
     private val _weatherState = MutableStateFlow<WeatherState>(WeatherState.Loading)
@@ -33,4 +34,5 @@ class WeatherViewModel : ViewModel() {
             }
         }
     }
+    val compliment = List(10) { it.toString() }
 }
