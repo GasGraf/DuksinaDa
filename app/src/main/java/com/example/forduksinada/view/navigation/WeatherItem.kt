@@ -31,7 +31,7 @@ fun WeatherItem(
     alignment: Alignment.Horizontal
 ) {
     val time = Date()
-    val (backgroundRes, textColor) = if (time.hours !in 6..17) {
+    val (backgroundRes, textColor) = if (time.hours in 6..17) {
         when (state.weather.firstOrNull()?.main) {
             "Clouds" -> R.drawable.background_cloudy_day to Color.White
             "Rain" -> R.drawable.background_cloudy_day to Color.White
